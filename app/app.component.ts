@@ -9,7 +9,7 @@ import { Food } from './food.model';
     <hr>
     <food-list [childFoodList]="masterFoodList" (clickSender)="editFood($event)"></food-list>
     <edit-food [childSelectedFood]="selectedFood" (doneButtonClickedSender)="finishedEditing()"></edit-food>
-    <new-food></new-food>
+    <new-food (newFoodSender)="addFood($event)"></new-food>
   </div>
   `
 })
@@ -32,5 +32,9 @@ export class AppComponent {
 
   finishedEditing() {
     this.selectedFood = null;
+  }
+
+  addFood(newFoodFromChild: Food) {
+    this.masterFoodList.push(newFoodFromChild);
   }
 }
