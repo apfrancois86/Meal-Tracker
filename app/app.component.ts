@@ -7,8 +7,9 @@ import { Food } from './food.model';
   <div class="container">
     <h1>Meal Tracker for {{month}}/{{day}}/{{year}}</h1>
     <hr>
-    <food-list [childFoodList]="masterFoodList" (clickSender)="editTask($event)"></food-list>
+    <food-list [childFoodList]="masterFoodList" (clickSender)="editFood($event)"></food-list>
     <edit-food [childSelectedFood]="selectedFood" (doneButtonClickedSender)="finishedEditing()"></edit-food>
+    <new-food></new-food>
   </div>
   `
 })
@@ -25,7 +26,7 @@ export class AppComponent {
     new Food('Green Salad','fresh and healthy', 300)
   ];
 
-  editTask(clickedFood) {
+  editFood(clickedFood) {
     this.selectedFood = clickedFood;
   }
 
