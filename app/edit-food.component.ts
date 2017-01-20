@@ -5,16 +5,16 @@ import { Food } from './food.model';
   selector: 'edit-food',
   template: `
       <div>
-        <div *ngIf="childSelectedTask">
-          <h3>{{childSelectedTask.food}}</h3>
+        <div *ngIf="childSelectedFood">
+          <h3>{{childSelectedFood.food}}</h3>
           <hr>
           <h3>Edit Meal</h3>
           <label>Enter name of food:</label>
-          <input [(ngModel)]="childSelectedTask.food">
+          <input [(ngModel)]="childSelectedFood.food">
           <label>Enter description of food:</label>
-          <input [(ngModel)]="childSelectedTask.description">
+          <input [(ngModel)]="childSelectedFood.description">
           <label>Enter total calories in food:</label>
-          <input type="number" [(ngModel)]="childSelectedTask.calories">
+          <input type="number" [(ngModel)]="childSelectedFood.calories">
           <button (click)="doneButtonClicked()">Done</button>
         </div>
       </div>
@@ -23,5 +23,10 @@ import { Food } from './food.model';
 })
 
 export class EditFoodComponent {
+    @Input() childSelectedFood: Food;
+    @Output() doneButtonClickedSender = new EventEmitter();
 
+    doneButtonClicked() {
+      this.doneButtonClickedSender.emit();
+    }
 }
