@@ -6,15 +6,17 @@ import { Food } from './food.model';
   template: `
 
       <div *ngFor="let currentFood of childFoodList">
-      <h2>{{currentFood.food}}
-      <ul>
-      <li>Description: {{currentFood.description}}</li>
-      <li>Calories: {{currentFood.calories}}</li>
-      </ul>
-      <button>Edit!</button>
+        <h2>{{currentFood.food}}</h2>
+        <ul>
+        <li>Description: {{currentFood.description}}</li>
+        <li>Calories: {{currentFood.calories}}</li>
+        </ul>
+        <button>Edit!</button>
+      </div>
   `
 })
 
 export class FoodListComponent {
   @Input() childFoodList: Food[];
+
 }

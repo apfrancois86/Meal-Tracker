@@ -8,6 +8,7 @@ import { Food } from './food.model';
     <h1>Meal Tracker for {{month}}/{{day}}/{{year}}</h1>
     <hr>
     <food-list [childFoodList]="masterFoodList"></food-list>
+    <edit-food></edit-food>
   </div>
   `
 })
