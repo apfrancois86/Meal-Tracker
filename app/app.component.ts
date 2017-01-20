@@ -21,7 +21,7 @@ export class AppComponent {
   year: number = this.currentTime.getFullYear()
   selectedFood = null;
   masterFoodList: Food[] = [
-    new Food('Steak','delicious filet mignon', 600),
+    new Food('Pepper Steak','delicious filet mignon', 600),
     new Food('Cheesecake', 'I ate two pieces!', 850),
     new Food('Green Salad','fresh and healthy', 300)
   ];

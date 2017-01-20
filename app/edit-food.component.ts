@@ -5,16 +5,16 @@ import { Food } from './food.model';
   selector: 'edit-food',
   template: `
       <div>
-        <div *ngIf="childSelectedFood">
+        <div class="editMeal" *ngIf="childSelectedFood">
           <h3>{{childSelectedFood.food}}</h3>
           <hr>
-          <h3>Edit Meal</h3>
+          <h4>Edit Meal</h4>
           <label>Enter name of food:</label>
-          <input [(ngModel)]="childSelectedFood.food">
+          <input [(ngModel)]="childSelectedFood.food"><br>
           <label>Enter description of food:</label>
-          <input [(ngModel)]="childSelectedFood.description">
+          <input [(ngModel)]="childSelectedFood.description"><br>
           <label>Enter total calories in food:</label>
-          <input type="number" [(ngModel)]="childSelectedFood.calories">
+          <input type="number" [(ngModel)]="childSelectedFood.calories"><br>
           <button (click)="doneButtonClicked()">Done</button>
         </div>
       </div>
