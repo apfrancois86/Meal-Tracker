@@ -11,6 +11,7 @@ import { Food } from './food.model';
       <li>Description: {{currentFood.description}}</li>
       <li>Calories: {{currentFood.calories}}</li>
       </ul>
+      <button>Edit!</button>
   `
 })
 
