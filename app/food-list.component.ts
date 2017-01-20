@@ -11,12 +11,17 @@ import { Food } from './food.model';
         <li>Description: {{currentFood.description}}</li>
         <li>Calories: {{currentFood.calories}}</li>
         </ul>
-        <button>Edit!</button>
+        <button (click)="editButtonHasBeenClicked(currentFood)">Edit!</button>
       </div>
   `
 })
 
 export class FoodListComponent {
   @Input() childFoodList: Food[];
+  @Output() clickSender = new EventEmitter();
+
+  editButtonHasBeenClicked(foodToEdit: Food) {
+    this.clickSender.emit(foodToEdit);
+  }
 
 }
